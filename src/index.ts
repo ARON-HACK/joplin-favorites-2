@@ -299,7 +299,7 @@ joplin.plugins.register({
     }
 
     // prepare commands menu
-    const commandsSubMenu: MenuItem[] = [
+    const baseMenuItems: MenuItem[] = [
       {
         commandName: 'favsAddFolder',
         label: 'Add active notebook'
@@ -326,6 +326,18 @@ joplin.plugins.register({
         accelerator: 'CmdOrCtrl+Alt+F'
       }
     ];
+
+    // Add quick jump shortcuts
+    const jumpMenuItems: MenuItem[] = [];
+    for (let i = 1; i <= 9; i++) {
+      jumpMenuItems.push({
+        commandName: `favsJumpToFavorite${i}`,
+        label: `Jump to Favorite ${i}`,
+        accelerator: `CmdOrCtrl+${i}`
+      });
+    }
+
+    const commandsSubMenu: MenuItem[] = [...baseMenuItems, ...jumpMenuItems];
     await joplin.views.menus.create('toolsFavorites', 'Favorites', commandsSubMenu, MenuItemLocation.Tools);
 
     // add commands to folders context menu
@@ -339,17 +351,6 @@ joplin.plugins.register({
 
     // add commands to editor context menu
     await joplin.views.menuItems.create('editorContextMenuAddNote', 'favsAddNote', MenuItemLocation.EditorContextMenu);
-
-    // add quick jump commands to Tools menu with keyboard shortcuts
-    // CmdOrCtrl automatically uses Cmd on Mac and Ctrl on Windows/Linux
-    for (let i = 1; i <= 9; i++) {
-      await joplin.views.menuItems.create(
-        `toolsMenuJumpToFavorite${i}`,
-        `favsJumpToFavorite${i}`,
-        MenuItemLocation.Tools,
-        { accelerator: `CmdOrCtrl+${i}` }
-      );
-    }
 
     //#endregion
 
