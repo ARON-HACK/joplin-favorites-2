@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- None
+## [1.4.0] - 2025-12-31
+
+### Added
+
+- Quick jump keyboard shortcuts (Cmd+1~9 on macOS, Ctrl+1~9 on Windows/Linux) to jump to the first 9 favorite items
+  - Works for all favorite types (notebooks, notes, todos, tags, searches)
+  - Shortcuts are automatically configured and can be customized in Settings > Keyboard Shortcuts
 
 ## [1.3.2] - 2023-11-19
 

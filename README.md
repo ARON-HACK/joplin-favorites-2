@@ -147,11 +147,31 @@ This plugin provides additional commands as described in the following table.
 | Add search to Favorites           | `favsAddSearch`        | Add favorite with entered search query | `Tools>Favorites`, `Command palette`                                     |
 | Remove all Favorites              | `favsClear`            | Remove all favorites                   | `Tools>Favorites`, `Command palette`                                     |
 | Toggle Favorites panel visibility | `favsToggleVisibility` | Toggle panel visibility                | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 1                | `favsJumpToFavorite1`  | Quick jump to first favorite           | `Tools`, `Command palette`                                               |
+| Jump to Favorite 2                | `favsJumpToFavorite2`  | Quick jump to second favorite          | `Tools`, `Command palette`                                               |
+| Jump to Favorite 3                | `favsJumpToFavorite3`  | Quick jump to third favorite           | `Tools`, `Command palette`                                               |
+| Jump to Favorite 4                | `favsJumpToFavorite4`  | Quick jump to fourth favorite          | `Tools`, `Command palette`                                               |
+| Jump to Favorite 5                | `favsJumpToFavorite5`  | Quick jump to fifth favorite           | `Tools`, `Command palette`                                               |
+| Jump to Favorite 6                | `favsJumpToFavorite6`  | Quick jump to sixth favorite           | `Tools`, `Command palette`                                               |
+| Jump to Favorite 7                | `favsJumpToFavorite7`  | Quick jump to seventh favorite         | `Tools`, `Command palette`                                               |
+| Jump to Favorite 8                | `favsJumpToFavorite8`  | Quick jump to eighth favorite          | `Tools`, `Command palette`                                               |
+| Jump to Favorite 9                | `favsJumpToFavorite9`  | Quick jump to ninth favorite           | `Tools`, `Command palette`                                               |
 
 ### Keyboard shortcuts
 
 Keyboard shortcuts can be assigned in user options via `Tools > Options > Keyboard Shortcuts` to all [commands](#commands) which are assigned to the `Tools>Favorites` menu context.
 In the keyboard shortcut editor, search for the command label where shortcuts shall be added.
+
+#### Quick Jump Shortcuts
+
+The plugin provides 9 quick jump shortcuts to access your favorite items:
+
+- **macOS**: `Cmd+1` through `Cmd+9` to jump to favorites 1-9
+- **Windows/Linux**: `Ctrl+1` through `Ctrl+9` to jump to favorites 1-9
+
+These shortcuts work for all favorite types (notebooks, notes, todos, tags, and searches). If a favorite doesn't exist at a particular position, the shortcut will be displayed in the keyboard shortcuts menu but will do nothing when pressed.
+
+The shortcuts are automatically configured and will appear in `Tools > Options > Keyboard Shortcuts`. You can customize them if desired.
 
 ## User options
 

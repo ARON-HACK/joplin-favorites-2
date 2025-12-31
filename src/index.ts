@@ -279,6 +279,25 @@ joplin.plugins.register({
       }
     });
 
+    // Commands: favsJumpToFavorite1 through favsJumpToFavorite9
+    // Desc: Quick jump to favorite items at positions 1-9
+    for (let i = 1; i <= 9; i++) {
+      await COMMANDS.register({
+        name: `favsJumpToFavorite${i}`,
+        label: `Jump to Favorite ${i}`,
+        iconName: 'fas fa-keyboard',
+        execute: async () => {
+          const index = i - 1; // Convert to 0-based index
+          const favorite: IFavorite = favorites.get(index);
+          
+          // Only jump if favorite exists (works for all favorite types)
+          if (favorite) {
+            await COMMANDS.execute('favsOpenFavorite', index);
+          }
+        }
+      });
+    }
+
     // prepare commands menu
     const commandsSubMenu: MenuItem[] = [
       {
@@ -319,6 +338,17 @@ joplin.plugins.register({
 
     // add commands to editor context menu
     await joplin.views.menuItems.create('editorContextMenuAddNote', 'favsAddNote', MenuItemLocation.EditorContextMenu);
+
+    // add quick jump commands to Tools menu with keyboard shortcuts
+    // CmdOrCtrl automatically uses Cmd on Mac and Ctrl on Windows/Linux
+    for (let i = 1; i <= 9; i++) {
+      await joplin.views.menuItems.create(
+        `toolsMenuJumpToFavorite${i}`,
+        `favsJumpToFavorite${i}`,
+        MenuItemLocation.Tools,
+        { accelerator: `CmdOrCtrl+${i}` }
+      );
+    }
 
     //#endregion
 
