@@ -272,7 +272,7 @@ joplin.plugins.register({
     // Desc: Toggle panel visibility
     await COMMANDS.register({
       name: 'favsToggleVisibility',
-      label: 'Toggle Favorites visibility',
+      label: 'Toggle Favorites Visibility',
       iconName: 'fas fa-eye-slash',
       execute: async () => {
         await panel.toggleVisibility();
@@ -322,7 +322,8 @@ joplin.plugins.register({
       },
       {
         commandName: 'favsToggleVisibility',
-        label: 'Toggle panel visibility'
+        label: 'Toggle panel visibility',
+        accelerator: 'CmdOrCtrl+Alt+F'
       }
     ];
     await joplin.views.menus.create('toolsFavorites', 'Favorites', commandsSubMenu, MenuItemLocation.Tools);
