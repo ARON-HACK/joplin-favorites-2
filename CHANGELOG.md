@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - None
 
+## [1.4.0] - 2026-06-22
+
+### Changed
+
+- Project forked and now maintained by [ARON-HACK](https://github.com/ARON-HACK/joplin-favorites-2)
+- New plugin id (`hack.aron.joplin.favorites`) and npm package (`joplin-plugin-aronhack-favorites`) so it can be published independently to the Joplin marketplace
+- Updated author, homepage, and repository metadata
+
 ## [1.3.2] - 2023-11-19
 
 ### Fixed

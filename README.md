@@ -1,5 +1,7 @@
 # Joplin Favorites
 
+> **Fork notice** — This is a maintained fork of [benji300/joplin-favorites](https://github.com/benji300/joplin-favorites) by [ARON-HACK](https://github.com/ARON-HACK). Original work © 2021 Benjamin Seifert, MIT licensed. See [License](#license).
+
 Favorites is a plugin to extend the UX and UI of [Joplin's](https://joplinapp.org/) desktop application.
 
 It allows to save any notebook, note, to-do, tag, or search as favorite in an extra panel view for quick access.
@@ -45,7 +47,7 @@ It allows to save any notebook, note, to-do, tag, or search as favorite in an ex
 
 ### Manual
 
-- Download the latest released JPL package (`*.jpl`) from [here](https://github.com/benji300/joplin-favorites/releases)
+- Download the latest released JPL package (`*.jpl`) from [here](https://github.com/ARON-HACK/joplin-favorites-2/releases)
 - Open Joplin and navigate to `Tools > Options > Plugins`
 - Press `Install plugin` and select the previously downloaded `jpl` file
 - Confirm selection
@@ -170,12 +172,6 @@ This plugin adds provides user options which can be changed via `Tools > Options
 - :bug: Found a bug?
   - Check the [Forum](https://discourse.joplinapp.org/t/notebook-note-to-do-tag-search-favorites-plugin/14049) if anyone else already reported the same issue. Otherwise report it by yourself.
 
-## Support
-
-You like this plugin as much as I do and it improves your daily work with Joplin?
-
-Then I would be very happy if you buy me a :beer: or :coffee: via [PayPal](https://www.paypal.com/donate?hosted_button_id=6FHDGK3PTNU22) :wink:
-
 ## Contributing
 
 Contributions to this plugin are most welcome. Feel free to open a pull request or an issue.
@@ -183,7 +179,7 @@ Make sure to use conventional [commit messages](https://github.com/pvdlg/conven
 
 ## Development
 
-The npm package of the plugin can be found [here](https://www.npmjs.com/package/joplin-plugin-benji-favorites).
+The npm package of the plugin can be found [here](https://www.npmjs.com/package/joplin-plugin-aronhack-favorites).
 
 ### Building the plugin
 
@@ -199,6 +195,7 @@ See [CHANGELOG](./CHANGELOG.md) for details.
 
 ## License
 
-Copyright (c) 2021 Benjamin Seifert
+Copyright (c) 2021 Benjamin Seifert (original author)
+Copyright (c) 2026 Aron Wu (ARON-HACK fork)
 
 MIT License. See [LICENSE](./LICENSE) for more information.
