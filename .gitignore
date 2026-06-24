@@ -1,3 +1,7 @@
 dist/
 node_modules/
 publish/
+
+# macOS AppleDouble metadata files (created on non-APFS volumes)
+._*
+.DS_Store
