@@ -1,6 +1,6 @@
 {
   "name": "joplin-plugin-aronhack-favorites",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Save any notebook, note, to-do, tag, or search as favorite in an extra panel view for quick access.",
   "author": "Aron Wu",
   "homepage": "https://github.com/ARON-HACK/joplin-favorites-2",

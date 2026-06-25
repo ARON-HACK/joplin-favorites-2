@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - None
 
+## [1.5.0] - 2026-06-25
+
+### Added
+
+- Quick jump keyboard shortcuts (`Cmd+1`~`9` on macOS, `Ctrl+1`~`9` on Windows/Linux) to jump to the first 9 favorite items
+  - Works for all favorite types (notebooks, notes, to-dos, tags, searches)
+  - Shortcuts are pre-configured and can be customized in `Tools > Options > Keyboard Shortcuts`
+- Default accelerator `Cmd/Ctrl+Alt+F` for the toggle panel visibility command
+
+### Changed
+
+- Renamed plugin display name to `Favorites 2`
+
 ## [1.4.0] - 2026-06-22
 
 ### Changed
