@@ -123,8 +123,11 @@ export class Settings {
         type: SettingItemType.Array,
         section: 'favorites.settings',
         public: false,
-        label: 'Favorites',
-        storage: SettingStorage.File
+        label: 'Favorites'
+        // NOTE: intentionally DB-backed (no SettingStorage.File). Joplin has no
+        // DB->file migration: switching an existing key to File storage makes the
+        // old DB value unreadable and it is deleted on first save, so file storage
+        // here would silently wipe existing users' favorites on upgrade.
       },
       // general settings
       enableDragAndDrop: {
