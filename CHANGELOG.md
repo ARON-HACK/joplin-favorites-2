@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Settings and favorites are now stored in Joplin's `settings.json` (`SettingStorage.File`) instead of the database, so they can be carried across installations by copying the settings file
+- Panel preferences (drag & drop, panel title, type icons, line height, widths, fonts, colors) are now stored in Joplin's `settings.json` (`SettingStorage.File`) instead of the database, so they can be carried across installations by copying the settings file. Favorites themselves remain in the database to avoid data loss on upgrade (Joplin has no DB→file migration for an existing setting key)
 
 ## [1.5.0] - 2026-06-25
 
