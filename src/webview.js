@@ -195,7 +195,7 @@ function drop(event) {
   // check whether tab (from joplin.plugin.note.tabs plugin) was dragged onto the panel - add new favorite at dropped index
   const noteTabsId = event.dataTransfer.getData('text/x-plugin-note-tabs-id');
   if (noteTabsId) {
-    const noteIds = new Array(noteTabsId);
+    const noteIds = [noteTabsId];
     webviewApi.postMessage({ name: 'favsAddNote', id: noteIds, targetIdx: dataTargetIdx });
     return;
   }

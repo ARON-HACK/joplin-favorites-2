@@ -210,33 +210,59 @@ export class Favorites {
   }
 
   /**
+   * Applies the handled mutation to the favorite at the index, then persists.
+   * Returns false (without persisting) if the index is out of bounds.
+   */
+  private async setField(index: number, mutate: (favorite: IFavorite) => void): Promise<boolean> {
+    if (index < 0 || index >= this.length) return false;
+
+    mutate(this.favorites[index]);
+    await this.store();
+    return true;
+  }
+
+  /**
    * Changes the value of the handled favorite.
    */
   async changeValue(index: number, newValue: string) {
-    if (index < 0 || newValue === undefined || newValue === '') return;
+    if (newValue === undefined || newValue === '') return;
 
-    this.favorites[index].value = this.encodeHtml(newValue, (this.favorites[index].type != FavoriteType.Search));
-    await this.store();
+    await this.setField(index, (fav) => {
+      fav.value = this.encodeHtml(newValue, (fav.type != FavoriteType.Search));
+    });
   }
 
   /**
    * Changes the title of the handled favorite.
    */
   async changeTitle(index: number, newTitle: string) {
-    if (index < 0 || newTitle === undefined || newTitle === '') return;
+    if (newTitle === undefined || newTitle === '') return;
 
-    this.favorites[index].title = this.encodeHtml(newTitle, true);
-    await this.store();
+    await this.setField(index, (fav) => {
+      fav.title = this.encodeHtml(newTitle, true);
+    });
+  }
+
+  /**
+   * Changes the title and value of the handled favorite in a single store.
+   * Each field is only changed when a non-empty replacement is handled.
+   */
+  async changeTitleAndValue(index: number, newTitle: string, newValue: string) {
+    await this.setField(index, (fav) => {
+      if (newTitle !== undefined && newTitle !== '') fav.title = this.encodeHtml(newTitle, true);
+      if (newValue !== undefined && newValue !== '') fav.value = this.encodeHtml(newValue, (fav.type != FavoriteType.Search));
+    });
   }
 
   /**
    * Changes the type of the handled favorite.
    */
   async changeType(index: number, newType: FavoriteType) {
-    if (index < 0 || newType === undefined) return;
+    if (newType === undefined) return;
 
-    this.favorites[index].type = newType;
-    await this.store();
+    await this.setField(index, (fav) => {
+      fav.type = newType;
+    });
   }
 
   /**

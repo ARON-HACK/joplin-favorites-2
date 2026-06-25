@@ -161,8 +161,7 @@ joplin.plugins.register({
         // open dialog and handle result
         const result: any = await editDialog.open(favorite);
         if (result.id == "ok" && result.formData != null) {
-          await favorites.changeTitle(index, result.formData.inputForm.title);
-          await favorites.changeValue(index, result.formData.inputForm.value);
+          await favorites.changeTitleAndValue(index, result.formData.inputForm.title, result.formData.inputForm.value);
         } else if (result.id == "delete") {
           await favorites.delete(index);
         } else {
