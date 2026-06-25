@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- None
+### Changed
+
+- Settings and favorites are now stored in Joplin's `settings.json` (`SettingStorage.File`) instead of the database, so they can be carried across installations by copying the settings file
 
 ## [1.5.0] - 2026-06-25
 
