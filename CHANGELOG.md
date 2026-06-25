@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- None
+## [1.6.0] - 2026-06-25
+
+### Added
+
+- Marketplace metadata: `categories` (`productivity`, `personal knowledge management`) and `screenshots` in the plugin manifest for a richer listing on the Joplin plugin marketplace
+
+### Changed
+
+- Settings and favorites are now stored in Joplin's `settings.json` (`SettingStorage.File`) instead of the database, so they can be carried across installations by copying the settings file
 
 ## [1.5.0] - 2026-06-25
 
