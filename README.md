@@ -23,6 +23,7 @@ It allows to save any notebook, note, to-do, tag, or search as favorite in an ex
 - Configurable style attributes
 - Support horizontal and vertical layout
 - Toggle panel visibility
+- Quick jump to the first 9 favorites via keyboard shortcuts (`Cmd/Ctrl+1` through `Cmd/Ctrl+9`)
 
 ### Screenshots
 
@@ -35,6 +36,10 @@ It allows to save any notebook, note, to-do, tag, or search as favorite in an ex
 ![favorites-sidebar-vertical](./assets/favorites-sidebar-vertical.png)
 
 > **NOTE** - The used UI theme on this screenshot can be downloaded [here](https://github.com/benji300/joplin-wanaka-ui).
+
+#### Quick jump keyboard shortcuts
+
+![quick-jump-shortcuts](./assets/quick-jump-shortcuts.png)
 
 ## Installation
 
@@ -149,11 +154,31 @@ This plugin provides additional commands as described in the following table.
 | Add search to Favorites           | `favsAddSearch`        | Add favorite with entered search query | `Tools>Favorites`, `Command palette`                                     |
 | Remove all Favorites              | `favsClear`            | Remove all favorites                   | `Tools>Favorites`, `Command palette`                                     |
 | Toggle Favorites panel visibility | `favsToggleVisibility` | Toggle panel visibility                | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 1                | `favsJumpToFavorite1`  | Quick jump to first favorite           | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 2                | `favsJumpToFavorite2`  | Quick jump to second favorite          | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 3                | `favsJumpToFavorite3`  | Quick jump to third favorite           | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 4                | `favsJumpToFavorite4`  | Quick jump to fourth favorite          | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 5                | `favsJumpToFavorite5`  | Quick jump to fifth favorite           | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 6                | `favsJumpToFavorite6`  | Quick jump to sixth favorite           | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 7                | `favsJumpToFavorite7`  | Quick jump to seventh favorite         | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 8                | `favsJumpToFavorite8`  | Quick jump to eighth favorite          | `Tools>Favorites`, `Command palette`                                     |
+| Jump to Favorite 9                | `favsJumpToFavorite9`  | Quick jump to ninth favorite           | `Tools>Favorites`, `Command palette`                                     |
 
 ### Keyboard shortcuts
 
 Keyboard shortcuts can be assigned in user options via `Tools > Options > Keyboard Shortcuts` to all [commands](#commands) which are assigned to the `Tools>Favorites` menu context.
 In the keyboard shortcut editor, search for the command label where shortcuts shall be added.
+
+#### Quick jump shortcuts
+
+The plugin provides 9 quick jump shortcuts to access your favorite items directly:
+
+- **macOS**: `Cmd+1` through `Cmd+9` to jump to favorites 1-9
+- **Windows/Linux**: `Ctrl+1` through `Ctrl+9` to jump to favorites 1-9
+
+These shortcuts work for all favorite types (notebooks, notes, to-dos, tags, and searches). If no favorite exists at a particular position, the shortcut simply does nothing when pressed.
+
+The shortcuts are pre-configured and appear in `Tools > Options > Keyboard Shortcuts`, where you can customize them if desired.
 
 ## User options
 

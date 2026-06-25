@@ -279,8 +279,27 @@ joplin.plugins.register({
       }
     });
 
+    // Commands: favsJumpToFavorite1 through favsJumpToFavorite9
+    // Desc: Quick jump to favorite items at positions 1-9
+    for (let i = 1; i <= 9; i++) {
+      await COMMANDS.register({
+        name: `favsJumpToFavorite${i}`,
+        label: `Jump to Favorite ${i}`,
+        iconName: 'fas fa-keyboard',
+        execute: async () => {
+          const index: number = i - 1; // Convert to 0-based index
+          const favorite: IFavorite = favorites.get(index);
+
+          // Only jump if favorite exists (works for all favorite types)
+          if (favorite) {
+            await COMMANDS.execute('favsOpenFavorite', index);
+          }
+        }
+      });
+    }
+
     // prepare commands menu
-    const commandsSubMenu: MenuItem[] = [
+    const baseMenuItems: MenuItem[] = [
       {
         commandName: 'favsAddFolder',
         label: 'Add active notebook'
@@ -303,9 +322,22 @@ joplin.plugins.register({
       },
       {
         commandName: 'favsToggleVisibility',
-        label: 'Toggle panel visibility'
+        label: 'Toggle panel visibility',
+        accelerator: 'CmdOrCtrl+Alt+F'
       }
     ];
+
+    // Add quick jump shortcuts (CmdOrCtrl+1 through CmdOrCtrl+9)
+    const jumpMenuItems: MenuItem[] = [];
+    for (let i = 1; i <= 9; i++) {
+      jumpMenuItems.push({
+        commandName: `favsJumpToFavorite${i}`,
+        label: `Jump to Favorite ${i}`,
+        accelerator: `CmdOrCtrl+${i}`
+      });
+    }
+
+    const commandsSubMenu: MenuItem[] = [...baseMenuItems, ...jumpMenuItems];
     await joplin.views.menus.create('toolsFavorites', 'Favorites', commandsSubMenu, MenuItemLocation.Tools);
 
     // add commands to folders context menu
